@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.structure.min.css">
+        <!--Link Bootstrap 4.6-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Script FontAwasome-->
+    <script  src = " https://kit.fontawesome.com/d38cea82af.js " crossorigin ="anonymous"></script> 
+    <!-- <link rel="stylesheet" href="assets/font/font-awesome.min.css">  -->
+    <title>Jeu : la trilogie</title>
+</head>
+
+<body>
+<div class="container-fluid bgpart1">
+    <!---------------------- Partie 1 : Entrée -------------------->
+    <div class="row d-block" id="firstPage">
+        <div class="col-12 d-flex justify-content-center align-items-center flex-column bgHeight">
+            <div class="rowTitre">
+                <h1 class="fadeInUp">La trilogie des aventures epiques</h1>
+            </div>
+            <div class="rowbutton">
+                <button class="btn btn-light mb-5 text-white clignote" id="buttonEnter"> Entrer</button>
+            </div>
+        </div>
+    </div>
+
+     <!---------------------- Partie : Vidéo -------------------->
+     <div class="row d-none" id="videoPage">
+        <div class="col-10 offset-1 d-flex justify-content-center align-items-center flex-column">
+            <video src="assets/mp4/poules renard viperes 4.mp4" controls type="video/mp4" playsinline autoplay muted id="video"></video>
+            <button class="btn btn-light col-2" id="buttonPasser"> Commencer</button>
+        </div>
+    </div>
+
+    <!---------------------- Partie 2 : Jeu -------------------->
+    <div class="d-none" id="secondPage">
+        <div id="modal" title="Règles du jeu"><img src="assets/img/regles.png" id="modalImg" alt="règles du jeu" width="800px"></div>
+    <!-- Row Zone dépot Utilisateur -->
+        <div class="row">
+            <div class="col-4 ml-auto mt-lg-5 pl-5 count">
+                <!--mt-sm-4-->
+                <p class="userCount">Gagnees :</p>
+                <p class="machineCount">Perdues :</p>
+            </div>
+        </div>
+        <div class="row-2 pt-lg-5">
+            <!--pt-sm-3-->
+            <div class="col-4 offset-4 rowDepot mx-auto" id="choixUtilisateur"></div>
+        </div>
+    <!-- Row Choix Utilisateur -->
+        <div class="row">
+            <div id="userChoice" class="col-12 text-center choice">
+                <div class="row justify-content-center">
+                    <div class="col-2 rowUser">
+                        <img src="assets/img/renard_debut.png" alt="renard" width="170px" data-value="renard" class="renardUser" id="renard">
+                    </div>
+                    <div class="col-2 rowUser ">
+                        <img src="assets/img/poule_debut.png" alt="poule" width="170px" data-value="poule" class="pouleUser" id="poule">
+                        <p class="equipe"><br>Votre equipe</p>
+                    </div>
+                    <div class="col-2 rowUser" >
+                        <img src="assets/img/serpent_debut.png" alt="vipere" width="170px" data-value="vipere" class="vipereUser" id="vipere">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!---------------------- Partie 3 : joueur VS ordi-------------------->
+     <div class="row d-none" id="thirdPage">
+        <!-- Part 3 : Row 1 USER -->
+    <div class="row ligneUtilisateur">
+        <div class="col-3 offset-1 text-left mt-5">
+            <p class="textPart3">UTILISATEUR</p>
+            <!-- <div id="userResult"></div> -->
+        </div>
+    </div>
+    <!-- Part 3 : Row 2 Choix USER -->
+    <div class="row ligneCombat">
+        <div class="col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/renard_debut.png" alt="renard" height="30%" data-value="renard" id="renardUser3" class="animate__animated animate__slideInLeft">
+            <img src="assets/img/poule_debut.png" alt="poule" height="30%" data-value="poule" id="pouleUser3" class="animate__animated animate__slideInLeft">
+            <img src="assets/img/serpent_debut.png" alt="vipere" height="30%" data-value="vipere" id="vipereUser3" class="animate__animated animate__slideInLeft">
+        </div>
+        <!-- Part 3 : Row 3 Choix MACHINE -->
+        <div class="col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/renard_debut.png" alt="renard" height="30%" data-value="renard" id="renardMachine3" class="animate__animated animate__slideInRight">
+            <img src="assets/img/poule_debut.png" alt="poule" height="30%" data-value="poule" id="pouleMachine3" class="animate__animated animate__slideInRight">
+            <img src="assets/img/serpent_debut.png" alt="vipere" height="30%" data-value="vipere" id="vipereMachine3" class="animate__animated animate__slideInRight">
+        </div>
+    </div>
+    <!-- Part 3 : Row 3 MACHINE -->
+    <div class="row ligneMachine">
+        <div class="col-3 offset-8 text-right">
+            <p class="textPart3">MACHINE</p>
+            <div id="machineResult"></div>
+        </div>
+    </div>
+    </div>
+
+    <!---------------------- Partie 4 : Résultat combat -------------------->
+    <div class="d-none" id="fourthPage">
+        <div class="row rowGagnant">
+        <!-- Part 4 : Row 1 Gagnant -->
+            <div class="col-12 d-flex justify-content-center align-self-end">
+                <img src="assets/img/renard_gagnant.png" height="180em" alt="renard poule" data-value="renard" id="renardPoule4" class="animate__animated animate__heartBeat">
+                <img src="assets/img/poule_victoire.png" height="180em" alt="poule vipere" data-value="poule" id="pouleVipere4" class="animate__animated animate__heartBeat">
+                <img src="assets/img/serpent_gagnant.png" height="180em" alt="vipere renard" data-value="vipere" id="vipereRenard4" class="animate__animated animate__heartBeat">
+                <img src="assets/img/renard-renard.png" height="180em" alt="renard" data-value="renard" id="renardRenard4" class="animate__animated animate__heartBeat">
+                <img src="assets/img/poule-poule.png" height="180em" alt="poule" data-value="poule" id="poulePoule4" class="animate__animated animate__heartBeat">
+                <img src="assets/img/serpent_serpent.png" height="180em" alt="vipere" data-value="vipere" id="vipereVipere4" class="animate__animated animate__heartBeat">
+            </div>
+        </div>
+        <!-- Part 4 : Row 2 Résultat -->
+        <div class="row text-white rowResult justify-content-center align-items-center">
+            <div class="col-4 offset-4d-flex textPart4 mb-5" >
+                <img src="assets/img/bois.png" width= "300px" alt="fond bois">
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

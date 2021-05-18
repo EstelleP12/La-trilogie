@@ -1,0 +1,262 @@
+@font-face {
+    font-family: 'Avocado';
+    src: url(../font/avocado.otf);
+}
+/*-------------------------Texte -----------------------*/
+p{
+    font-family: 'Avocado';
+}
+
+/*------------------------Background image -----------------------*/
+.bgpart1{
+    background: url(../img/BGPart1.jpg);
+    background-size: cover;
+    height : 100vh;
+}
+.bgpart2{
+    background: url(../img/BGPart2-2.jpg);
+    background-size: cover;
+    height : 100vh;
+}
+.bgpart3{
+    background: url(../img/BGPart3.jpg);
+    background-size: cover;
+    height : 100vh;
+}
+.bgpart4{
+    background: url(../img/BGPart4-1.jpg);
+    background-size: cover;
+    height : 100vh;
+}
+
+/*------------------------Partie 1 : Entrée-----------------------*/
+.firstPage{
+    height : 100vh;
+}
+.bgHeight{
+    height: 100vh;
+}
+/* Animation 1ère page*/
+h1{
+    font-family: 'Avocado';
+    font-size : 3em;
+}
+.rowTitre{
+    height : 50vh;
+}
+.rowButton{
+    height : 50vh;
+}
+.rowGagnant{
+    height : 70vh; 
+}
+.rowResult{
+    height : 30vh; 
+}
+#buttonEnter{
+    background-color: rgba(206, 172, 211, 0.5);
+    width : 100px;
+    height : 50px;
+    color:white;
+    border:none;
+    font-size: 1.2em;
+}
+.clignote {
+    animation: clignote 2s linear infinite;
+}
+@keyframes clignote {  
+    50% { opacity: 0; }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    }
+    }
+    @keyframes fadeInUp {
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    }
+    } 
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeInDown {
+        0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        }
+        100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        }
+        }
+        @keyframes fadeInDown {
+        0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        }
+        100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        }
+    } 
+
+/*--------------------------Partie Vidéo-------------------------*/
+#videoPage{
+    background-color: black;
+    height: 100vh;
+}
+#video{
+    height: 90vh;
+}
+
+/*-------------------------Partie 2 : Jeu -----------------------*/
+.rowMachine{
+    height : 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rowUser{
+    height : 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rowDepot{
+    width: 300px;
+    height : 300px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+}
+.machineCount, .userCount{
+    font-family: avocado;
+    color: white;
+    font-size: 2em;
+}
+.equipe{
+    font-family: avocado;
+    color: #AD3C3D;
+    font-size: 1.2em;
+}
+#secondPage{
+    height: 100vh;
+}
+
+/*-------------------------Partie 3 : VS -----------------------*/
+.ligneUtilisateur{
+    height: 10vh;
+}
+.ligneMachine{
+    height: 10vh;
+}
+.ligneCombat{
+    height: 80vh;
+}
+.textPart3{
+    font-family: 'Avocado';
+    color: white;
+    font-size : 2em;
+}
+.animate__animated.animate__slideInLeft, .animate__animated.animate__slideInRight {
+    --animate-duration: 600ms;
+}    
+/*-------------------Partie 4 : Résultat combat -----------------*/
+.textPart4{
+    font-family: 'Avocado';
+    color: white;
+    font-size : 2em;
+     /* background-image: url(../img/bois.png);
+    background-size: contain;
+    background-repeat: no-repeat; */
+    height : 100px;
+    position : relative;
+    top : 0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#result{
+    position : absolute;
+}
+
+/*---------------------------------------------------*/
+/*-------------------MEDIAS QUERIES -----------------*/
+/*---------------------------------------------------*/
+@media screen and (max-width: 850px) {
+
+h1{
+    font-size: 2em;
+}
+    /*----------Page Jeu----------*/
+#modalImg{
+    height: 70vh;
+    width: 70vw;
+}
+.userCount, .machineCount{
+    font-size: 1em;
+    margin-bottom: 0.2em;
+}
+.count{
+    margin-top: 2em;
+}
+.rowDepot{
+    height: 120px;
+    width: 120px;
+}
+#renard, #poule, #vipere{
+    width: 6em;
+}
+#userChoice{
+    position: relative;
+    bottom: 0;
+    height: 20px;
+}
+.equipe{
+    font-size: 1em;
+}
+.rowUser{
+    height: 100px;
+    padding-top: 110px;
+
+}
+
+}
+
+
+
